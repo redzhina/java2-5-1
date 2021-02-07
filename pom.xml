@@ -49,11 +49,28 @@
                         <id>report</id>
                         <phase>verify</phase>
                         <goals>
-                            <goal>report</goal>
+                            <goal>instruction</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
+
+    <rules>
+        <element>BUNDLE</element>
+        <limits>
+            <limit>
+                <counter>INSTRUCTION</counter>
+                <value>COVEREDRATIO</value>
+                <minimum>1.0</minimum>
+            </limit>
+            <limit>
+                <counter>CLASS</counter>
+                <value>MISSEDCOUNT</value>
+                <maximum>1.0</maximum>
+            </limit>
+        </limits>
+    </rules>
+
 </project>
